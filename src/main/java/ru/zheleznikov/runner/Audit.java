@@ -17,7 +17,7 @@ public class Audit {
         this.all++;
     }
 
-    public void showInfoAboutFail(String name, Exception e) {
+    public void addInfoAboutFails(String name, Exception e) {
         this.errLog += "\nTest " + name + "() failed with exception:\n" + e.toString() + "\n";
     }
 

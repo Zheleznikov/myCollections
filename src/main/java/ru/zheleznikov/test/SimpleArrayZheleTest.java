@@ -9,21 +9,21 @@ import static ru.zheleznikov.test.AssertZhele.assertItems;
 
 public class SimpleArrayZheleTest {
 
-
-    SimpleArrayList<String> strings = new SimpleArrayList<>();
-    String abc = "abc";
-    String foo = "foo";
-    String bar = "bar";
-    String baz = "baz";
-    String foobar = "foobar";
+   private SimpleArrayList<String> strings = new SimpleArrayList<>();
+   private String abc = "abc";
+   private String foo = "foo";
+   private String bar = "bar";
+   private String baz = "baz";
+   private String foobar = "foobar";
 
     @BeforeZhele
-    public void setup() {
+    public void setup() throws Exception {
         System.out.println("SETUP");
         strings.add(abc);
         strings.add(foo);
         strings.add(bar);
         strings.add(baz);
+//        throw new Exception("Ошибка в before");
     }
 
     @AfterZhele
@@ -84,7 +84,6 @@ public class SimpleArrayZheleTest {
         assertItems(4, strings.size());
         strings.clear();
         assertItems(1, strings.size()); // ошибка. Должно быть 0
-
     }
 
 
